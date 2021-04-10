@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Página Web</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<p> ---> Paragraph. Para realizar un párrafo.
+    <strong> ---> Pone en negrita las letras
+<em>     ---> Pone en itálicas las letras
+<small>  ---> Pone mas pequeñas las letras
+<h1>, <h2>, <h3>, <h4>, <h5>, <h6> ---> Encabezados 1 el mas grande y 6 mas pequeño
+<ul>     ---> Unordered list. Pone los <li> con bullets (puntos)
+<ol>     ---> Ordered list. Pone los <li> en orden con números
+<li>     ---> Se utilizan dentro de un ordered list o unordered list para listar items
+<div>    ---> Division. Se utiliza para separar por secciones
+<span>   ---> Por sí solo no hace nada. Se utiliza para vincularlo con CSS o JavaScript
+
+No necesitan closing tag:
+<br>     ---> line break. Salto de línea
+<hr>     ---> horizontal rule. Crea una línea horizontal en el documento para separar secciones o contenido.
+<img>    ---> image. Posee el atributo src de source donde se indica la ruta donde está la imagen y alt que es un texto
+	      que se muestra en caso de que no cargue la imagen.
+<a>      ---> anchor tag. Tiene los atributos href (hyperlink reference) donde se le pasa un link ya sea de la web
+	      o de una página local del proyecto y target que indica si se abrirá en una página nueva o en la misma, etc.
+<blockquote>  ---> Para hacer citas que provengan de una fuente, la cual se coloca con el atributo cite.
+
+
+<form>  ---> Formulario
+<label for="id">  ---> Indica la etiqueta asociada a un input field mediante el id.
+<input type="text/email/password" id="id">  ---> Es un input field con id.
+<input type="radio" name="age">  ---> Crea radio buttons. Solo una opción si está correctamente agrupada con el atributo name
+<select id="question">  ---> Crea un dropdownlist y con tag <option id="option1"> se agregan las opciones al dropdownlist.
+<textarea cols="30" rows="15" placeholder="Your bio...">  ---> Crea un área de texto con tamaño modificables mediante los atributos cols y rows. Placeholder es marca de agua, que indica al usuario lo que debe escribir.
+<input type="submit"> ---> Crea el botón de enviar formulario.
+Atributo required ---> Valida que los campos estén llenos antes de enviar el formulario.
+
+Nuevos Tags HTML5:
+<main>     ---> Aquí va el contenido principal de una página web. Es único para esa página.
+<section>  ---> Define una sección específica de una página web (Ej: Lista de Blogs, información de contacto)
+<article>  ---> Define contenido que forma un artículo (Ej: un blog post).
+<aside>    ---> Define contenido relacionado a algo mas (Ej: blogs similares).
+<header>   ---> Es la cabecera de una página web (contiene el menú (nav), título), etc.
+<footer>   ---> Es el pie de página de una página web.
+<nav>      ---> Navigation. Se usa con <ul> para construir un menú con vínculos <a>.
+
+
+CSS
+---
+Propiedad display
+Inline: Por defecto son las etiquetas <span>, <em>, <a>
+Block: Por defecto son las etiquetas <div>, <h1>...<h6>, <p>, <li> 
+
+* Los tags inline no tienen márgenes top ni bottom. Los ignora.
+* Los tags block no hacen diferenciación con los márgenes top y bottom. Ejemplo, si para un div se definió
+  un margin-bottom: 60px y para el siguiente div se definió un margin-top: 20px, el espacio entre ambos divs
+  será de 60px. No 80.
+* Para solucionar estos temas aplicar display: inline-block.
+
+* user agent stylesheet en Styles de Development Tools ---> son los estilos por defecto que le da a la página el browser.
+
+div.lorem p a {}  ---> Busca un anchor tag dentro de un párrafo dentro de un div con la clase lorem. 
+div .lorem {} ---> Busca cualquier tag con la clase lorem dentro del div. 
+Cascada (Herencia) ---> Es cuando tags contenedores como <div> o <body> tienen sus propios estilos y los tags definidos dentro de ellos pueden heredar 
+			(inherit) los estilos de sus padres. Ejemplo ---> margin: inherit; padding: inherit; border:inherit. 
+
+Chrome Dev Tools
+----------------
+Se puede acceder a ellas con F12 o Inspeccionando algún elemento HTML.
+
+Pestaña Elements:
+Muestra los elementos contenidos en nuestra página web (tags).
+
+* Inspeccionar cualquier tag, botón derecho del mouse "Edit as HTML", para agregar contenido html para ver como luciría en la web, sin afectar el editor de código.
+* Scroll into view: Cuando se navega por los tags en la pestaña Elements y se quiere seleccionar la ubicación de esos tags en la página.
+* Hide Element: Esconder el tag seleccionado. Si se quiere revertir, volver a la misma opción y presionar para hacer el unckeck en la misma opción.
+* Delete Element: Elimina el tag seleccionado, sin afectar el editor de código.
+* SubPestaña Styles: Cada Tag puede ser modificado a través de CSS en el browser para ver como luce, sin afectar código CSS construido en el editor.
+  Para ello, hacerlo en el bloque element.style { } y ver como reemplaza otros estilos definidos.
+
+Pestaña Sources:
+Muestra el árbol de archivos que componen nuestro sitio web.
+
+* En el archivo .css se pueden probar y cambiar otros estilos sin afectar lo hecho en el editor de código. Los cambios se deshacen al refrescar la página.
+
+Pestaña Consola:
+Para ver resultados de código JavaScript.
+
+Nota: Al lado del botón inspeccionar, está el botón de Devices lo que servirá para el responsive design donde se pueden cambiar los agentes(iPad, Galaxy S5, Pixel 2)
+y el zoom. El 100% es el tamaño original de la pantalla del dispositivo seleccionado.
+
+
+Position & Layout:
+-----------------
+
+Pueden haber 5 tipos de posiciones: Static, Relative, Fixed, Absolute y Sticky
+
+* Static:   Es el que pone por defecto.
+* Relative: El objeto tomará como base su posición inicial y la podremos mover con respecto a esa base. Funciona poniendo position: relative, left: tanto, top: tanto, etc.
+* Fixed:    Para fijar cierto objeto, como un menú para que siempre se muestre si se hace scroll down o scroll up. Puede funcionar con z-index: 1 y con un width: 100% que le da carácter responsivo.
+* Absolute: El objeto tomará como base el padre que debe tener position diferente al static. Por ende, el objeto se mostrará por encima o por debajo de otros objetos.
+            Para corregir, usar propiedades left, right, top, bottom con valores en porcentajes (%) que es lo que hace que el objeto sea responsivo.
+* Sticky:   Es una combinación de static y fixed. Se usa cuando ya tenemos un objeto fixed y haciendo scroll down se pega otro objeto con esa posición fixed. 
+	    Funciona con la propiedad top y un valor de medida. 
+
+
+Nota: La unidad de medida em tomará como base la medida del padre que puede ser en píxels y agrandar un poco mas el objeto.
+* z-index: es una propiedad que sirve para traer objetos hacia el frente con respecto a otros, o ponerlos detrás. Valores positivos (frente), valores negativos (detrás).
+           Por defecto, todos los objetos tienen z-index: 0.
+* white-space: nowrap ---> si hay problemas en alinear objetos inline-block, aplicar esta propiedad y su valor al padre para corregir cuando se esté probando el
+		           responsivo.
+* margin: 0 auto ---> Funciona junto con la propiedad max-width. 0 es para top/bottom, auto es para left/right. Centraliza el objeto dentro del mad-width definido.
+* Como el browser pone estilos (user agent stylesheet) a los elementos por defecto, siempre es bueno resetearlos en el css. Tags genéricos como body, ul, h1, h2, li, a con propiedades
+  como margin: 0, padding: 0, font-family: Arial...
+* max-width: 100% y width: 1200px ---> Quiere decir que para pantallas grandes de 1200px se mostrará de manera responsiva la página tomando este valor. 
+				       Si la pantalla es de 800px o más pequeña tomará el valor del max-width viéndose bien toda la página.
+* box-sizing: border-box ---> Encapsula las propiedades width, margin y padding dentro de un cuadrado imaginario para alinear el contenido.
+* line-height         ---> Espacio vertical entre líneas.
+
+
+Pseudo Classes:
+--------------
+
+Sirven para estilizar los tags en base a eventos o acciones.
+Son estas instrucciones que van después de indicar los tags en css :hover, :focus, :first-child, :valid (para el caso de verificar un campo de correo).
+
+Pseudo Elements:
+---------------
+
+Sirven para inyectar contenido dinámico en los elementos. 
+Después de indicar los tags en el css ::first-line, ::first-letter, ::selection (sombreado), ::after
+
+
+Diseño Responsivo:
+-----------------
+
+* Media Queries: Le dice al navegador como estilizar un elemento en una dimensión particular del viewport.
+
+* Viewport meta tag: Le dice al navegador a que ancho debería estar el viewport acorde al dispositivo. Agregar este tag dentro del <head>, donde:
+	width=device-width ---> Le dice al navegador a que ancho se debe adaptar de acuerdo al dispositivo.
+        initial-scale      ---> Es un zoom. A mayor valor, mayor será el zoom.
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+* Imágenes Responsivas: Sólo imágenes más pequeñas y rápidas de cargar serán vistas en dispositivos móviles. NO REALIZADO EN ESTE CURSO.
+
+Nota: Para desaparecer un tag como <br> en css, lo que hay que hacer es llegar al tag y display:none.
+CONSEJO: Es preferible trabajar construyendo un web site desde dispositivos móviles hacia desktop. Es decir, usando como condición min-width en las media queries.
+
+Terminando ya este curso, se puede profundizar aún mas con CSS en cursos de: CSS Animation, CSS Grid, CSS Flexbox y Styling HTML 5 Forms.
